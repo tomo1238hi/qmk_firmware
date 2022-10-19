@@ -74,11 +74,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB, XXXXXXX, XXXXXXX,LCTL(KC_E),LCTL(KC_R) , XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   KC_UP, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        ARROW,LCTL(KC_A), XXXXXXX,  KC_DEL, KC_RGHT, XXXXXXX,                      KC_BSPC, XXXXXXX,LCTL(KC_K), KC_PPLS, KC_PAST, XXXXXXX,\
+        ARROW,LCTL(KC_A), XXXXXXX,  KC_DEL, KC_RGHT, XXXXXXX,                      KC_BSPC, XXXXXXX,LCTL(KC_K), KC_PPLS, KC_PAST, KC_RCTL,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, XXXXXXX,  KC_CUT, KC_COPY, KC_PSTE,                      KC_LEFT, KC_DOWN, XXXXXXX, XXXXXXX, XXXXXXX, KC_RSFT,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LALT, KC_LSFT,  KC_SPC,     KC_ENT, XXXXXXX, KC_RALT \
+                                          KC_LALT, KC_LCTL, KC_LSFT,     KC_ENT, XXXXXXX, KC_RALT \
                                       //`--------------------------'  `--------------------------'
   )
 };
