@@ -23,13 +23,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define _LOWER 1
 #define _RAISE 2
 #define _ARROW 3
+#define _NUM_AND_ARROW_TGL 4
 
 enum custom_keycodes {
   DEFAULT = SAFE_RANGE,
   LOWER,
   RAISE,
   ARROW,
-  M_HNZN_TGL
+  NUM_AND_ARROW_TGL
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -48,13 +49,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,  XXXXXXX,                      KC_PPLS,  KC_7,    KC_8,   KC_9, KC_PAST, XXXXXXX,\
+       KC_TAB, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PPLS,    KC_7,    KC_8,    KC_9, KC_PAST, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX,XXXXXXX,   XXXXXXX,                      KC_PMNS,  KC_4,    KC_5,   KC_6, KC_PSLS, XXXXXXX,\
+      XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX,XXXXXXX,   XXXXXXX,                      KC_PMNS,    KC_4,    KC_5,    KC_6, KC_PSLS, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  KC_LSFT,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                      XXXXXXX,  KC_1,    KC_2,   KC_3, XXXXXXX, KC_RSFT,\
+  KC_LSFT,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX, XXXXXXX,                         KC_1,    KC_2,    KC_3, XXXXXXX, KC_RSFT,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   LOWER,  KC_SPC,     KC_ENT, KC_EQL,   KC_0 \
+                                          KC_LGUI,   LOWER,  KC_SPC,     KC_ENT, KC_EQL,     KC_0 \
                                       //`--------------------------'  `--------------------------'
     ),
 
@@ -64,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_EXLM, KC_DQUO, KC_HASH,  KC_DLR, KC_PERC,                      XXXXXXX, KC_LCBR, KC_RCBR, XXXXXXX, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX,  KC_GRV, KC_CIRC,                      XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX, KC_RSFT,\
+      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX,  KC_GRV, KC_CIRC,                      XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX, NUM_AND_ARROW_TGL,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI, XXXXXXX,  KC_SPC,    KC_ENT,   RAISE, KC_RALT \
                                       //`--------------------------'  `--------------------------'
@@ -74,26 +75,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB, XXXXXXX, XXXXXXX,LCTL(KC_E),XXXXXXX,XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   KC_UP, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        ARROW,LCTL(KC_A), XXXXXXX,  KC_DEL, KC_RGHT, XXXXXXX,                      KC_BSPC, XXXXXXX,LCTL(KC_K), KC_PPLS, KC_PAST, KC_RCTL,\
+        ARROW,LCTL(KC_A),XXXXXXX, KC_DEL, KC_RGHT, XXXXXXX,                      KC_BSPC, XXXXXXX,LCTL(KC_K),KC_PPLS,KC_PAST, KC_RCTL,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, XXXXXXX,  KC_CUT, KC_COPY, KC_PSTE,                      KC_LEFT, KC_DOWN, XXXXXXX, XXXXXXX, XXXXXXX, KC_RSFT,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI, KC_LCTL, KC_LSFT,     KC_ENT, XXXXXXX, KC_RALT \
                                       //`--------------------------'  `--------------------------'
+  ),
+  
+    [_NUM_AND_ARROW_TGL] = LAYOUT_split_3x6_3( \
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_TAB, XXXXXXX, XXXXXXX,   KC_UP, XXXXXXX, XXXXXXX,                      XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX, KC_BSPC,\
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+        ARROW, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT,  XXXXXXX,                      XXXXXXX,    KC_4,    KC_5,    KC_6, XXXXXXX, XXXXXXX,\
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,   KC_1,    KC_2,    KC_3, XXXXXXX,NUM_AND_ARROW_TGL,\
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          KC_LGUI, KC_LNG2,  KC_SPC,     KC_ENT, KC_LNG1,    KC_0 \
+                                      //`--------------------------'  `--------------------------'
   )
 };
 
-#ifdef OLED_ENABLE
-  oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-    if (!is_keyboard_master()) {
-      return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
-    }
-    return rotation;
-  }
 
+#ifdef OLED_ENABLE
   void oled_render_layer_state(void) {
       oled_write_P(PSTR("Layer: "), false);
-      switch (layer_state) {
+      switch (get_highest_layer(layer_state)) {
           case _DEFAULT:
               oled_write_ln_P(PSTR("Default"), false);
               break;
@@ -106,9 +113,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           case _ARROW:
               oled_write_ln_P(PSTR("Arrow"), false);
               break;
+          case _NUM_AND_ARROW_TGL:
+              oled_write_ln_P(PSTR("Num & Arrow"), false);
+              break;
+          default:
+              oled_write_ln_P(PSTR("Undefined"), false);
       }
   }
 
+  oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+    if (!is_keyboard_master()) {
+      return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
+    }
+    return rotation;
+  }
 
   char keylog_str[24] = {};
 
@@ -163,10 +181,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   }
 
   bool oled_task_user(void) {
+    if (is_keyboard_master()) {
+        oled_render_layer_state();
+    } else {
       oled_render_logo();
-      return false;
+    }
+    return false;
   }
-#endif // OLED_ENABLE
+#endif
 
 void persistent_default_layer_set(uint16_t default_layer) {
   eeconfig_update_default_layer(default_layer);
@@ -177,14 +199,6 @@ static bool lower_pressed=false;
 static bool raise_pressed=false;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (record->event.pressed) {
-    switch(keycode) {
-      case M_HNZN_TGL:
-        SEND_STRING(SS_LALT("`"));
-        return false;
-    }
-  }
-
   switch (keycode) {
     case DEFAULT:
       if (record->event.pressed) {
@@ -222,6 +236,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_on(_ARROW);
       } else {
         layer_off(_ARROW);
+      }
+      return false;
+    case NUM_AND_ARROW_TGL:
+      if (record->event.pressed) {
+        layer_invert(_NUM_AND_ARROW_TGL);
       }
       return false;
     default:
