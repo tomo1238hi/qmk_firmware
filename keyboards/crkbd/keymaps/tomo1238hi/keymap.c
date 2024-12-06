@@ -35,11 +35,11 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DEFAULT] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB,    KC_Q,    KC_W, KC_SCLN, KC_COMM,  KC_DOT,                         KC_M,    KC_R,    KC_D,    KC_Y,   KC_P,  KC_BSLS,\
+       KC_TAB,    KC_Q,    KC_W,    KC_U, KC_COMM,  KC_DOT,                         KC_J,    KC_D,    KC_R,    KC_Y,   KC_P,  KC_BSLS,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        ARROW,    KC_A,    KC_O,    KC_U,    KC_I,    KC_E,                         KC_G,    KC_N,    KC_T,    KC_K,    KC_S, KC_RCTL,\
+        ARROW,    KC_A,    KC_O,    KC_E,    KC_I, KC_SCLN,                         KC_K,    KC_T,    KC_N,    KC_S,    KC_H, KC_RCTL,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_F,                         KC_B,    KC_H,    KC_J,    KC_L, KC_SLSH, SFT_T(KC_MINS),\
+      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_F,                         KC_B,    KC_G,    KC_M,    KC_L, KC_SLSH, SFT_T(KC_MINS),\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI,   LOWER,  KC_SPC,     KC_ENT,  RAISE,  KC_RALT \
                                       //`--------------------------'  `--------------------------'
@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX,  KC_GRV, KC_CIRC,                      XXXXXXX, KC_LBRC, KC_RBRC, XXXXXXX, XXXXXXX, KC_RSFT,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, M_HNZN_TGL,KC_SPC,    KC_ENT,   RAISE, KC_RALT \
+                                          KC_LGUI, XXXXXXX,  KC_SPC,    KC_ENT,   RAISE, KC_RALT \
                                       //`--------------------------'  `--------------------------'
   ),
 
